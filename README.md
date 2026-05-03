@@ -30,9 +30,9 @@
 
 | 工具 | 仓库 | Stars | 简介 |
 |------|------|-------|------|
-| superpowers | [obra/superpowers](https://github.com/obra/superpowers) | — | 14 个 skill 串联 TDD 驱动的七阶段开发方法论，子代理独立执行每个任务 |
-| gstack | [garrytan/gstack](https://github.com/garrytan/gstack) | ~54,000 | 23 个专家角色模拟虚拟工程团队，含 CEO/Designer/QA，唯一内置 Playwright 真实浏览器测试 |
-| addyosmani/agent-skills | [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) | ~8,600 | 19 个 skill 覆盖 SDLC 六阶段，"Process, not prose"，含防跳步机制和证据前置要求 |
+| superpowers | [obra/superpowers](https://github.com/obra/superpowers) | 177k | 14 个 skill 串联 TDD 驱动的七阶段开发方法论，子代理独立执行每个任务 |
+| gstack | [garrytan/gstack](https://github.com/garrytan/gstack) | 88k | 23 个专家角色模拟虚拟工程团队，含 CEO/Designer/QA，唯一内置 Playwright 真实浏览器测试 |
+| addyosmani/agent-skills | [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) | ~27k | 19 个 skill 覆盖 SDLC 六阶段，"Process, not prose"，含防跳步机制和证据前置要求 |
 
 #### 功能重叠与冲突矩阵
 

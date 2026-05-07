@@ -24,7 +24,7 @@
 
 ### 1.1 含完整工作流型
 
-提供完整的端到端开发方法论，将 Claude 的行为串联成有顺序、有检查点的开发生命周期。
+提供完整的端到端开发方法论，将 Claude 的行为串联成有顺序、有检查点的开发生命周期。常见实现方式为：一个 Hook 激活整个系统：SessionStart Hook 把 一个起点skill（包含完整工作流流程） 的完整内容强制注入上下文，让 Claude 在每次响应前都会检查 Skill 库。Skills 彼此之间通过明确的"触发条件"形成工作流链条。由于是通过hook注入初始提示词，所以往往两两之间会发生冲突。
 
 #### 概览
 
@@ -32,19 +32,8 @@
 |------|------|-------|------|
 | superpowers | [obra/superpowers](https://github.com/obra/superpowers) | 177k | 14 个 skill 串联 TDD 驱动的七阶段开发方法论，子代理独立执行每个任务 |
 | gstack | [garrytan/gstack](https://github.com/garrytan/gstack) | 88k | 23 个专家角色模拟虚拟工程团队，含 CEO/Designer/QA，唯一内置 Playwright 真实浏览器测试 |
-| addyosmani/agent-skills | [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) | ~27k | 19 个 skill 覆盖 SDLC 六阶段，"Process, not prose"，含防跳步机制和证据前置要求 |
+| addyosmani/agent-skills | [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) | 27k | 19 个 skill 覆盖 SDLC 六阶段，"Process, not prose"，含防跳步机制和证据前置要求 |
 
-#### 功能重叠与冲突矩阵
-
-| | superpowers | gstack | addyosmani/agent-skills |
-|---|---|---|---|
-| **superpowers** | — | ⚠️ 主要冲突 | ⚠️ 部分重叠 |
-| **gstack** | ⚠️ 主要冲突 | — | ⚠️ 部分重叠 |
-| **addyosmani/agent-skills** | ⚠️ 部分重叠 | ⚠️ 部分重叠 | — |
-
-> **superpowers vs gstack**：两者都定义完整工作流，安装后均会影响 Claude 的整体开发行为。superpowers 以 TDD 为核心、子代理为执行单元；gstack 以角色扮演为核心、真实浏览器测试为差异点。**建议二选一**，不建议同时激活。
->
-> **superpowers / gstack vs addyosmani/agent-skills**：均覆盖全 SDLC，存在阶段重叠。但 agent-skills 模块化程度更高，可按需取其中某个阶段的单个 skill 补强其他框架的缺失环节，**不必视为互斥**。
 
 ---
 
